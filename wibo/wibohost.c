@@ -113,7 +113,7 @@ uint8_t * usr_radio_receive_frame(uint8_t len, uint8_t *frm, uint8_t lqi,
 
 	/* decode command code */
 	if (WIBOCMDCODE_PINGREPLY == pr->hdr.command) {
-		cb_wibohost_pingreply(pr);
+		cb_wibohost_pingreply(pr, lqi, ed);
 	} else {
 		/* unknown command, skip the frame */
 	}
@@ -151,6 +151,9 @@ void wibohost_init(void)
 	radio_set_param(RP_PANID(nodeconfig.pan_id));
 	radio_set_param(RP_SHORTADDR(nodeconfig.short_addr));
 	radio_set_param(RP_IDLESTATE(STATE_RXAUTO));
+	
+  radio_set_param(RP_CCAMODE(3));
+  radio_set_param(RP_TXPWR(15));
 }
 
 /*

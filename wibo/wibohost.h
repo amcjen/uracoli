@@ -46,7 +46,7 @@
 #include "wibocmd.h"
 
 void wibohost_init(void);
-void cb_wibohost_pingreply(wibocmd_pingreply_t *rp);
+void cb_wibohost_pingreply(wibocmd_pingreply_t *rp, uint8_t lqi, int8_t ed);
 void wibohost_ping(uint16_t short_addr);
 uint8_t wibohost_pingreplied(void);
 void wibohost_feed(uint16_t short_addr, uint8_t *data, uint8_t lendata);

@@ -36,10 +36,10 @@
 <pre>
 
 Fuses/Locks:
-     LF: 0xe2 - 8MHz internal RC Osc.
-     HF: 0x11 - without boot loader
-     HF: 0x10 - with boot loader
-     EF: 0xff
+     LF: 0xe6 - 16MHz transceiver Osc.
+     HF: 0xd1 - without boot loader
+     HF: 0xd0 - with boot loader
+     EF: 0xf7
      LOCK: 0xef - protection of boot section
 
 Bootloader:

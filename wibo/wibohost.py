@@ -40,7 +40,7 @@ class WIBORxDevice(serial.Serial):
     def __init__(self, *args, **kwargs):
         serial.Serial.__init__(self, *args, **kwargs)
         self.flt = re.compile("(?P<code>[A-Z]+)(?P<data>.*)")
-        self.VERBOSE = 0
+        self.VERBOSE = 1
 
     def _flush(self):
         self.read(self.inWaiting())

@@ -278,7 +278,7 @@ rzusb:
 	$(MAKE) BOARD=rzusb MCU=at90usb1287 F_CPU=8000000UL $(TARGETS)
 
 sparkfun:
-	$(MAKE) BOARD=sparkfun MCU=atmega128rfa1 F_CPU=8000000UL $(TARGETS)
+	$(MAKE) BOARD=sparkfun MCU=atmega128rfa1 F_CPU=16000000UL $(TARGETS)
 	
 stb128rfa1:
 	$(MAKE) BOARD=stb128rfa1 MCU=atmega128rfa1 F_CPU=8000000UL $(TARGETS)

@@ -104,11 +104,11 @@ static inline void printok()
 /*
  * \brief Called asynchronous when ping reply frame is received
  */
-void cb_wibohost_pingreply(wibocmd_pingreply_t *pr)
+void cb_wibohost_pingreply(wibocmd_pingreply_t *pr, uint8_t lqi, int8_t ed)
 {
 	printf_P(
-			PSTR("OK {'short_addr':0x%02X, 'boardname':'%s', 'swversion':0x%02X, 'crc':0x%04X, 'pagesize':0x%X}\n"),
-			pr->hdr.srcaddr, pr->boardname, pr->swversion, pr->crc, pr->pagesize);
+			PSTR("OK {'short_addr':0x%02X, 'boardname':'%s', 'swversion':0x%02X, 'crc':0x%04X, 'pagesize':0x%X, 'lqi':%d, 'ed':%d}\n"),
+			pr->hdr.srcaddr, pr->boardname, pr->swversion, pr->crc, pr->pagesize, lqi, ed);
 	pingreplied = 1;
 }
 
